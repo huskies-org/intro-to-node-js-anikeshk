@@ -13,6 +13,9 @@ A simple todo application built using Node.js and TypeScript. It has the followi
 7. Tests using Jest framework
 8. Containerization of the application using Docker.
 
+**New**
+1. "city" field introduced in the user model
+
 ---
 
 ## Deployment
