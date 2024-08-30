@@ -8,7 +8,7 @@ import { ErrorCodes } from '../constants/constants';
 export const UserController = {
   registerUser: async (req: Request, res: Response) => {
     try {
-      let { name, username, password, email } = req.body;
+      let { name, username, password, email, city } = req.body;
 
       if (!name || !username || !password) {
         return res
@@ -25,7 +25,7 @@ export const UserController = {
         });
       }
 
-      const user = new User({ name, username, password, email });
+      const user = new User({ name, username, password, email, city });
       await user.save();
       return res.status(200).json({ status: 'success' });
     } catch (error) {
@@ -39,6 +39,7 @@ export const UserController = {
         status: 'success',
         name: usermeta.name,
         email: usermeta.email,
+        city: usermeta.city,
         updatedAt: usermeta.updatedAt,
       });
     } catch (error) {
